@@ -105,8 +105,14 @@ function createBoard() {
         const card = document.createElement('img')
         card.setAttribute('src', 'images/frontCard.jpg')
         card.setAttribute('data-id', i )
+        card.addEventListener('click', flipCard)
         grid.appendChild(card)
     }
 }
 
 createBoard()
+
+function flipCard() {
+    const cardId = this.getAttribute('data-id')
+    console.log('clicked', cardId)
+}
