@@ -101,7 +101,7 @@ cardArray.sort(() => 0.5 - Math.random())
 const grid = document.querySelector('#grid')
 
 function createBoard() {
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < cardArray.length; i++) {
         const card = document.createElement('img')
         card.setAttribute('src', 'images/frontCard.jpg')
         card.setAttribute('data-id', i )
