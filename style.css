@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+
+}
