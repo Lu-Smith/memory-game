@@ -109,8 +109,8 @@ function createBoard() {
         const card = document.createElement('img')
         card.setAttribute('src', 'images/frontCard.jpg')
         card.setAttribute('data-id', i )
-        card.addEventListener('click', flipCard)
         grid.appendChild(card)
+        card.addEventListener('click', flipCard)
     }
 }
 
@@ -149,10 +149,10 @@ function flipCard() {
         cardsChosenIds.push(cardId)
         this.setAttribute('src', cardArray[cardId].img)
         if (cardsChosen.length === 2) {
-                setTimeout(checkMatch, 1000)
-            }
+                setTimeout(checkMatch, 1500)
+        } else if (cardsChosen.length > 2) {
+            this.setAttribute('src', 'images/frontCard.jpg')
         }
     }
-   
-
+}
    
