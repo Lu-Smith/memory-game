@@ -120,25 +120,18 @@ function checkMatch() {
     const cards = document.querySelectorAll('#grid img')
     const optionOneId = cardsChosenIds[0]
     const optionTwoId = cardsChosenIds[1]
-    if (optionOneId == optionTwoId) {
-        cards[optionOneId].setAttribute('src', 'images/guessedCard.jpg')
-        cards[optionTwoId].setAttribute('src', 'images/guessedCard.jpg')
-        
-    }
     if (cardsChosen[0] == cardsChosen[1]) {
         cards[optionOneId].setAttribute('src', 'images/guessedCard.jpg')
         cards[optionTwoId].setAttribute('src', 'images/guessedCard.jpg')
         cards[optionOneId].removeEventListener('click', flipCard )
         cards[optionTwoId].removeEventListener('click', flipCard )
         cardsWon.push(cardsChosen)
-        
     } else {
         cards[optionOneId].setAttribute('src', 'images/frontCard.jpg')
         cards[optionTwoId].setAttribute('src', 'images/frontCard.jpg')
     }
    
     result.innerHTML = cardsWon.length
- 
     cardsChosen = []
     cardsChosenIds = []
     if (cardsWon.length == cardArray.length/2) {
@@ -149,10 +142,17 @@ function checkMatch() {
 
 function flipCard() {
     const cardId = this.getAttribute('data-id')
-    cardsChosen.push(cardArray[cardId].name)
-    cardsChosenIds.push(cardId)
-    this.setAttribute('src', cardArray[cardId].img)
-    if (cardsChosen.length === 2) {
-        setTimeout(checkMatch, 1200)
+    if(cardsChosenIds == cardId) {
+        return
+    } else {
+        cardsChosen.push(cardArray[cardId].name)
+        cardsChosenIds.push(cardId)
+        this.setAttribute('src', cardArray[cardId].img)
+        if (cardsChosen.length === 2) {
+                setTimeout(checkMatch, 1000)
+            }
+        }
     }
-}
+   
+
+   
