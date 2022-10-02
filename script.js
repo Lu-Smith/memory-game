@@ -121,13 +121,11 @@ function checkMatch() {
     const optionOneId = cardsChosenIds[0]
     const optionTwoId = cardsChosenIds[1]
     if (optionOneId == optionTwoId) {
-        alert('You found a match')
         cards[optionOneId].setAttribute('src', 'images/guessedCard.jpg')
         cards[optionTwoId].setAttribute('src', 'images/guessedCard.jpg')
         
     }
     if (cardsChosen[0] == cardsChosen[1]) {
-        alert('You got a match')
         cards[optionOneId].setAttribute('src', 'images/guessedCard.jpg')
         cards[optionTwoId].setAttribute('src', 'images/guessedCard.jpg')
         cards[optionOneId].removeEventListener('click', flipCard )
