@@ -94,7 +94,7 @@ const cardArray = [
     {
         name: '12',
         img: 'images/12.jpg',
-    },
+    }
 ]
 
 cardArray.sort(() => 0.5 - Math.random())
@@ -115,6 +115,21 @@ function createBoard() {
 }
 
 createBoard()
+
+function timeCount() {
+    const timer = document.querySelector('#time')
+    const start = Date.now();
+    let check = null
+    if (check === null) {
+        check = setInterval(function() {
+            const delta = Date.now() - start; 
+            timer.innerHTML = Math.floor(delta / 1000)
+            if(result.innerHTML === 'Congratulation, you found them all!') {
+                timer.innerHTML = 100
+            }
+        }, 1000); 
+    }  
+    }  
 
 function checkMatch() {
     const cards = document.querySelectorAll('#grid img')
@@ -137,11 +152,12 @@ function checkMatch() {
     if (cardsWon.length == cardArray.length/2) {
         result.innerHTML = 'Congratulation, you found them all!'
     }
-
 }
 
 function flipCard() {
     const cardId = this.getAttribute('data-id')
+    
+ 
     if(cardsChosenIds == cardId) {
         return
     } else {
@@ -149,10 +165,25 @@ function flipCard() {
         cardsChosenIds.push(cardId)
         this.setAttribute('src', cardArray[cardId].img)
         if (cardsChosen.length === 2) {
-                setTimeout(checkMatch, 1200)
+            setTimeout(checkMatch, 1200)
+            
         } else if (cardsChosen.length > 2) {
             this.setAttribute('src', 'images/frontCard.jpg')
+        } else {
+            startTimer(); // "do something" happens
         }
     }
 }
    
+const startTimer = (function() {
+    let executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            timeCount()
+        }
+    };
+})();
+
+
+
