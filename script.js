@@ -149,7 +149,7 @@ function flipCard() {
         cardsChosenIds.push(cardId)
         this.setAttribute('src', cardArray[cardId].img)
         if (cardsChosen.length === 2) {
-                setTimeout(checkMatch, 1500)
+                setTimeout(checkMatch, 1200)
         } else if (cardsChosen.length > 2) {
             this.setAttribute('src', 'images/frontCard.jpg')
         }
