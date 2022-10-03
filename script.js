@@ -125,7 +125,7 @@ function timeCount() {
             const delta = Date.now() - start; 
             timer.innerHTML = Math.floor(delta / 1000)
             if(result.innerHTML === 'Congratulation, you found them all!') {
-                timer.innerHTML = Math.floor(delta / 1000)
+                timer.innerHTML = Math.floor(delta / 1000) - 1
                 clearInterval(check);
             }
         }, 1000); 
