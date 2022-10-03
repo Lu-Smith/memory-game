@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,7 @@ body {
     text-align: center;
     background-color: black;
     color: white;
+    font-family: 'Alkalami', serif;
 }
 
 header {
@@ -18,9 +21,11 @@ header {
 }
 
 h1 {
-    margin: 20px 100px;
-    font-size: 35px;
-    line-height: 45px;
+    margin: 50px 0px 20px 0;
+    font-size: 45px;
+    line-height: 55px;
+    color: white;
+    text-shadow: 2px 5px 10px #B41757;
 }
 
 button {
@@ -32,6 +37,8 @@ button {
     background-color: #B41757;
     box-shadow: 0 3px 2px white;
     transition: all 200ms ease-in-out;
+    color: white;
+    margin-left: 600px
 }
 
 button:hover {
